@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14 Beräkningsmetoder", "14
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15 Beräkningsmetoder med generiska typer", "15 Beräkningsmetoder med generiska typer\15 Beräkningsmetoder med generiska typer.csproj", "{217A22F1-3E96-41B7-8F94-20CE22AA5CAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01 Skriv namn - Test", "01 Skriv namn - Test\01 Skriv namn - Test.csproj", "{66881F33-39C5-41BE-A9C4-C97AB7D12885}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{217A22F1-3E96-41B7-8F94-20CE22AA5CAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{217A22F1-3E96-41B7-8F94-20CE22AA5CAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{217A22F1-3E96-41B7-8F94-20CE22AA5CAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66881F33-39C5-41BE-A9C4-C97AB7D12885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66881F33-39C5-41BE-A9C4-C97AB7D12885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66881F33-39C5-41BE-A9C4-C97AB7D12885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66881F33-39C5-41BE-A9C4-C97AB7D12885}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
