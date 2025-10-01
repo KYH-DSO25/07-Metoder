@@ -14,6 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\04 Tal förekommer i vektor\04 Tal förekommer i vektor.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
   </ItemGroup>
 
