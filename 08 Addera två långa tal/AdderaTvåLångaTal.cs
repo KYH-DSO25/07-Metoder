@@ -4,31 +4,64 @@
  *      Varje tal som skall adderas kan innehålla upp till 10 000 siffror.
  */
 
-string fordonsTyp = "CAR";
-string skiljetecken = "#";
-string regNummer = "ABC123";
-int platsNummer = 3;
+Console.Write("Enter first non-negative number: ");
+string first = Console.ReadLine();
 
-string[] PHus = new string[101];
+Console.Write("Enter second non-negative number: ");
+string second = Console.ReadLine();
 
-ParkeraFordon(fordonsTyp, skiljetecken, regNummer, platsNummer);
-Console.WriteLine($"Plats nummer {platsNummer}: {PHus[platsNummer]}");
-Console.WriteLine(HämtaPRuta(PHus, platsNummer));
-
-
-Console.Write("\n\nTryck på en tangent för att stänga fönstret...");
-Console.ReadKey();
-
-
-void ParkeraFordon(string fordonsTyp, string skiljetecken, string regNummer, int platsNummer)
+if (IsCorrectNumber(first) && IsCorrectNumber(second))
 {
-    // Stoppa in fordonet på angiven plats
-    PHus[platsNummer] = fordonsTyp + skiljetecken + regNummer;
+    List<int> result = AccumulateTwoNumbers(first, second);
+
+    Console.Write("\nResult: ");
+    PrintResult(result);
+}
+else
+{
+    Console.WriteLine("\n-> You have entered an invalid number(s)...\n");
 }
 
-string HämtaPRuta(string[] PHus, int platsNummer)
+
+bool IsCorrectNumber(string number)
 {
-    string[] temp = PHus[platsNummer].Split('#');
-    return String.Format("Plats nummer: {0}, Fordonstyp: {1}, Regnummer: {2}",
-        platsNummer, temp[0], temp[1]);
+    for (int i = 0; i < number.Length; i++)
+        if (number[i] < '0' || number[i] > '9')
+            return false;
+
+    return true;
+}
+
+List<int> AccumulateTwoNumbers(string first, string second)
+{
+    // Here convert string to int[] Array, because
+    // according assignment we must represent numbers in Array
+    var a = first.Select(ch => ch - '0').ToArray();
+    var b = second.Select(ch => ch - '0').ToArray();
+
+    Array.Reverse(a);
+    Array.Reverse(b);
+
+    List<int> result = new List<int>(Math.Max(a.Length, b.Length));
+
+    int carry = 0;
+
+    for (int i = 0; i < result.Capacity; i++)
+    {
+        int num = (i < a.Length ? a[i] : 0) + (i < b.Length ? b[i] : 0) + carry;
+        carry = num / 10;
+        result.Add(num % 10);
+    }
+
+    if (carry > 0) result.Add(carry);
+
+    return result;
+}
+
+void PrintResult(List<int> result)
+{
+    for (int i = result.Count - 1; i >= 0; i--)
+        Console.Write(result[i]);
+
+    Console.WriteLine("\n");
 }
